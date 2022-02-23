@@ -6,18 +6,19 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct FrontView: View {
     @ObservedObject var locationManager: LocationManager
-    var uuidManager: UUIDManager
+    @ObservedObject var uuidManager: UUIDManager
 //     DB의 idfv와 기기의 idfv를 비교해 받아올 예정
     
     var body: some View {
         VStack {
+            Spacer()
             Text("Apus Check-In")
                 .font(.largeTitle)
                 .fontWeight(.thin)
-                .padding(.top, 30)
             Spacer()
             EntranceButton(isInLocation: locationManager.isNear, intraID: uuidManager.intraID).padding(.bottom)
             Spacer()
