@@ -25,7 +25,7 @@ struct FrontView: View {
                 Spacer()
                 Text("IntraID: \(uuidManager.intraID)")
                     .font(.title2).fontWeight(.ultraLight)
-                Text("My distance from Cluster: \(Int(locationManager.myDistanceFromCluster)) meter")
+                Text(locationManager.myDistanceFromCluster)
                     .font(.title2).fontWeight(.ultraLight)
                     .padding(.bottom, 30)
                     .multilineTextAlignment(.center)
