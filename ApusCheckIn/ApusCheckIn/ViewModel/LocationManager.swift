@@ -54,8 +54,13 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     private let processLocation = ProcessLocation()
     
-    var myDistanceFromCluster: Double {
-        processLocation.getDistanceFromCluster(lat: userLatitude, lon: userLongitude)
+    var myDistanceFromCluster: String {
+        let distance = Int(round(processLocation.getDistanceFromCluster(lat: userLatitude, lon: userLongitude) / 1000))
+        if distance < 1 {
+            return "Check In Available"
+        } else {
+            return "My distance from Cluster: \(distance) Kilometer"
+        }
     }
     
     var isNear: Bool {
