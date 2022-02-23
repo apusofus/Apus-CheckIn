@@ -9,9 +9,10 @@ import Foundation
 import Firebase
 
 class UUIDManager: ObservableObject {
-    var UUID: String
-    //var isFirst = 0
+    @Published var isFirst = false
     @Published var intraID: String
+    var UUID: String
+    
     let db = Firestore.firestore()
     init(uuid: String) {
         self.UUID = uuid
@@ -24,7 +25,7 @@ class UUIDManager: ObservableObject {
                 self.intraID = String(tmp[1])
                 print(self.intraID)
             } else {
-//            self.isFirst = 1
+                self.isFirst = true
                 print("Document does not exist")
             }
         }

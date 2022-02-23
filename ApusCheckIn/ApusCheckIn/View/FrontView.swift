@@ -14,45 +14,54 @@ struct FrontView: View {
 //     DB의 idfv와 기기의 idfv를 비교해 받아올 예정
     // Test
     var body: some View {
-        VStack {
-            Spacer()
-            Text("Apus Check-In")
-                .font(.largeTitle)
-                .fontWeight(.thin)
-            Spacer()
-            EntranceButton(isInLocation: locationManager.isNear, intraID: uuidManager.intraID).padding(.bottom)
-            Spacer()
-            Text("IntraID: \(uuidManager.intraID)")
-                .font(.title2).fontWeight(.ultraLight)
-            Text("My distance from Cluster: \(Int(locationManager.myDistanceFromCluster)) meter")
-                .font(.title2).fontWeight(.ultraLight)
-                .padding(.bottom, 30)
-                .multilineTextAlignment(.center)
+        NavigationView {
+            VStack {
+                Spacer()
+                Text("Apus Check-In")
+                    .font(.largeTitle)
+                    .fontWeight(.thin)
+                Spacer()
+                EntranceButton(uuidManager: uuidManager, isInLocation: locationManager.isNear).padding(.bottom)
+                Spacer()
+                Text("IntraID: \(uuidManager.intraID)")
+                    .font(.title2).fontWeight(.ultraLight)
+                Text(locationManager.myDistanceFromCluster)
+                    .font(.title2).fontWeight(.ultraLight)
+                    .padding(.bottom, 30)
+                    .multilineTextAlignment(.center)
+            }
+            .navigationBarHidden(true)
         }
     }
 }
 
 struct EntranceButton: View {
     @State private var showModal = false
+    var uuidManager: UUIDManager
     var isInLocation: Bool
-    var intraID: String
     var time: String = ""
     var body: some View {
-        Button {
-            showModal = true
-        } label: {
-            if isInLocation == true {
-                Image("coloredApus").resizable()
-            } else {
-                Image("uncoloredApus").resizable()
-            }
-        }
-        .sheet(isPresented: self.$showModal) {
-            MyView(intraID: intraID)
-        }
-        .frame(width: self.buttonWidth(),
-               height: self.buttonHeight())
-        .disabled(!isInLocation)
+        NavigationLink (
+            //            showModal = true
+            destination: MyView(intraID: uuidManager.intraID)
+                .simultaneousGesture(TapGesture().onEnded{
+                    if uuidManager.isFirst == true {
+                        //show Popup and get intraID, register to db
+                        uuidManager.isFirst = false
+                    }
+                }),
+            label: {
+                if isInLocation == true {
+                    Image("coloredApus").resizable()
+                } else {
+                    Image("uncoloredApus").resizable()
+                }
+            })
+            .frame(width: self.buttonWidth(),
+                   height: self.buttonHeight())
+            .disabled(!isInLocation)
+        //        .sheet(isPresented: self.$showModal) {
+        //            MyView(intraID: intraID)
     }
     
     private func buttonWidth() -> CGFloat {
