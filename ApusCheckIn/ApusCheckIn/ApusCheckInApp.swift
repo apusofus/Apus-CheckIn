@@ -12,13 +12,12 @@ import Firebase
 struct ApusCheckInApp: App {
     init() {
         FirebaseApp.configure()
-        db()
+        checkin = LocationManager()
+        uuidManager = UUIDManager(uuid: UIDevice.current.identifierForVendor!.uuidString)
     }
-    func db(){
-        Firestore.firestore().collection("testCollection").document("92567420-C6B4-4845-95D5-9C8A6E7EA00A").setData(["intraID" : "hakim"])
-    }
-    let checkin = LocationManager()
-    let uuidManager = UUIDManager(uuid: UIDevice.current.identifierForVendor!.uuidString)
+
+    let checkin: LocationManager
+    let uuidManager: UUIDManager
     var body: some Scene {
         WindowGroup {
             FrontView(
