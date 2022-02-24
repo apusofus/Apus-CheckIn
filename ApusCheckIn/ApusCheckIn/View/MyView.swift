@@ -9,10 +9,9 @@ import SwiftUI
 
 struct MyView: View {
     var intraID: String
-    let timeManager = TimeManager()
     var body: some View {
         VStack {
-            Text(timeManager.time)
+            Text(Date(), style: .time)
             Text(intraID)
         }
     }

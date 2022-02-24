@@ -12,7 +12,6 @@ struct FrontView: View {
     @ObservedObject var locationManager: LocationManager
     @ObservedObject var uuidManager: UUIDManager
 //     DB의 idfv와 기기의 idfv를 비교해 받아올 예정
-    
     var body: some View {
         NavigationView {
             VStack {
