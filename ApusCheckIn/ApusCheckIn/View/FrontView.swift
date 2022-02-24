@@ -28,27 +28,31 @@ struct FrontView: View {
                     .font(.title2).fontWeight(.ultraLight)
                     .padding(.bottom, 30)
                     .multilineTextAlignment(.center)
+                
             }
             .navigationBarHidden(true)
+            .alert(isPresented: $uuidManager.isFirst,
+                   TextAlert(title: "Give me your IntraID",
+                             message: "",
+                             keyboardType: .alphabet) { result in
+                if let intraID = result {
+                    Firestore.firestore().collection("testCollection").document(uuidManager.UUID).setData(["intraID" : "*\(intraID)*"], merge: true)
+                    uuidManager.isFirst = false
+                    uuidManager.renewIntraId(intraID: intraID)
+                }
+            })
         }
     }
 }
 
 struct EntranceButton: View {
     @State private var showModal = false
-    var uuidManager: UUIDManager
+    @ObservedObject var uuidManager: UUIDManager
     var isInLocation: Bool
     var time: String = ""
     var body: some View {
         NavigationLink (
-            //            showModal = true
-            destination: MyView(intraID: uuidManager.intraID)
-                .simultaneousGesture(TapGesture().onEnded{
-                    if uuidManager.isFirst == true {
-                        //show Popup and get intraID, register to db
-                        uuidManager.isFirst = false
-                    }
-                }),
+            destination: MyView(intraID: uuidManager.intraID),
             label: {
                 if isInLocation == true {
                     Image("coloredApus").resizable()
@@ -59,8 +63,6 @@ struct EntranceButton: View {
             .frame(width: self.buttonWidth(),
                    height: self.buttonHeight())
             .disabled(!isInLocation)
-        //        .sheet(isPresented: self.$showModal) {
-        //            MyView(intraID: intraID)
     }
     
     private func buttonWidth() -> CGFloat {

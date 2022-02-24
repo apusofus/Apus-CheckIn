@@ -18,7 +18,7 @@ class UUIDManager: ObservableObject {
         self.UUID = uuid
         print(uuid) // 추후 삭제할 것
         self.intraID = "undefined"
-        db.collection("testCollection").document(uuid).addSnapshotListener { (document, error) in
+        db.collection("testCollection").document(uuid).getDocument { (document, error) in
             if let document = document, document.exists {
                 let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
                 let tmp = dataDescription.split(separator: "*")
@@ -26,9 +26,12 @@ class UUIDManager: ObservableObject {
                 print(self.intraID)
             } else {
                 self.isFirst = true
-                print("Document does not exist")
             }
         }
+    }
+    
+    func renewIntraId(intraID: String) {
+        self.intraID = intraID
     }
 }
 

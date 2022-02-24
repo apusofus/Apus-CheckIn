@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		822C041527C746F900ADD3B6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822C041427C746F900ADD3B6 /* Extensions.swift */; };
+		822C041727C7472B00ADD3B6 /* InputPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822C041627C7472B00ADD3B6 /* InputPopUp.swift */; };
 		825879ED27BE12F6008912B2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825879EC27BE12F6008912B2 /* LocationManager.swift */; };
 		8296B05827BE5DEF007CF4AC /* ProcessLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8296B05727BE5DEF007CF4AC /* ProcessLocation.swift */; };
 		82DC443327BE0756007D8684 /* ApusCheckInApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DC443227BE0756007D8684 /* ApusCheckInApp.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		822C041427C746F900ADD3B6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		822C041627C7472B00ADD3B6 /* InputPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPopUp.swift; sourceTree = "<group>"; };
 		825879EC27BE12F6008912B2 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		825879F427BE2024008912B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8296B05727BE5DEF007CF4AC /* ProcessLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessLocation.swift; sourceTree = "<group>"; };
@@ -63,6 +67,7 @@
 		825879EA27BE12DE008912B2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				822C041627C7472B00ADD3B6 /* InputPopUp.swift */,
 				825879EC27BE12F6008912B2 /* LocationManager.swift */,
 				9BFA6F3C27C39DB100681570 /* UUIDManager.swift */,
 			);
@@ -102,6 +107,7 @@
 				825879E927BE12D4008912B2 /* View */,
 				825879EA27BE12DE008912B2 /* ViewModel */,
 				82DC443227BE0756007D8684 /* ApusCheckInApp.swift */,
+				822C041427C746F900ADD3B6 /* Extensions.swift */,
 				82DC443627BE0757007D8684 /* Assets.xcassets */,
 				82DC443827BE0757007D8684 /* Preview Content */,
 			);
@@ -197,9 +203,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BFA6F4127C49EB600681570 /* MyView.swift in Sources */,
+				822C041527C746F900ADD3B6 /* Extensions.swift in Sources */,
 				9BFA6F3D27C39DB100681570 /* UUIDManager.swift in Sources */,
 				8296B05827BE5DEF007CF4AC /* ProcessLocation.swift in Sources */,
 				82DC443327BE0756007D8684 /* ApusCheckInApp.swift in Sources */,
+				822C041727C7472B00ADD3B6 /* InputPopUp.swift in Sources */,
 				825879ED27BE12F6008912B2 /* LocationManager.swift in Sources */,
 				82DC444127BE0905007D8684 /* FrontView.swift in Sources */,
 			);
