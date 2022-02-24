@@ -11,8 +11,10 @@ import CoreLocation
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
 
     private let locationManager = CLLocationManager()
-    @Published var locationStatus: CLAuthorizationStatus?
-    @Published var lastLocation: CLLocation?
+    var locationStatus: CLAuthorizationStatus?
+    var lastLocation: CLLocation?
+    var distance: Int = -1 
+    @Published var distanceHandler: Int = -1
 
     override init() {
         super.init()
@@ -44,19 +46,19 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         lastLocation = location
+        distance = Int(round(processLocation.getDistanceFromCluster(lat: userLatitude, lon: userLongitude) / 1000))
+        if (distance != distanceHandler) {
+            distanceHandler = distance
+        }
     }
     
     /* below is what I appended */
-    
     private var userLatitude: Double { lastLocation?.coordinate.latitude ?? 0 }
-    
     private var userLongitude: Double { lastLocation?.coordinate.longitude ?? 0 }
-    
     private let processLocation = ProcessLocation()
     
     var myDistanceFromCluster: String {
-        let distance = Int(round(processLocation.getDistanceFromCluster(lat: userLatitude, lon: userLongitude) / 1000))
-        if distance < 1 {
+        if distance < 1{
             return "Check In Available"
         } else {
             return "My distance from Cluster: \(distance) Kilometer"
