@@ -46,19 +46,36 @@ struct FrontView: View {
 }
 
 struct EntranceButton: View {
-    @State private var showModal = false
     @ObservedObject var uuidManager: UUIDManager
     var isInLocation: Bool
     var time: String = ""
     var body: some View {
         NavigationLink (
-            destination: MyView(intraID: uuidManager.intraID),
+            destination: CalenderView(),
+            //MyView(intraID: uuidManager.intraID),
             label: {
                 if isInLocation == true {
-                    Image("coloredApus").resizable()
+                    ZStack {
+                        RoundedRectangle(cornerRadius:50).foregroundColor(.cyan)
+                        Image(systemName: "swift").foregroundColor(.black).font(.system(size: self.buttonWidth()/2))
+                    }
                 } else {
-                    Image("uncoloredApus").resizable()
+                    ZStack{
+                        RoundedRectangle(cornerRadius:50).foregroundColor(.gray)
+                        Image(systemName: "swift").foregroundColor(.black).font(.system(size: self.buttonWidth()/2))
+                    }
                 }
+            })
+            .simultaneousGesture(TapGesture().onEnded{
+                Firestore.firestore().collection("testCollection").document(uuidManager.UUID).setData(["Date" : Date()], merge: true)
+//                print(Date())
+//                Firestore.firestore().collection("testCollection").document(uuidManager.UUID).getDocument { (document, error) in
+//                    if let document = document, document.exists {
+//                        let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+//                        let tmp = dataDescription
+//                        print(tmp)
+//                    }
+//                }
             })
             .frame(width: self.buttonWidth(),
                    height: self.buttonHeight())
