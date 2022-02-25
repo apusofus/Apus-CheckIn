@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Firebase
 
 extension UIAlertController {
   convenience init(alert: TextAlert) {
