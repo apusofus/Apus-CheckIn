@@ -16,9 +16,6 @@ struct Home: View {
                     .navigationBarHidden(true)
             }
         }
-//        View().onTapGesture(perform: {
-//            ExampleModalView(date: date).presentation(ExampleModal())
-//        })
     }
 }
 
