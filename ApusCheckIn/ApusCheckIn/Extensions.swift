@@ -41,7 +41,7 @@ extension View {
 
 extension Firestore {
     func addIntraID(collection: String, document: String, intraID: String) {
-        self.collection(collection).document(document).setData(["intraID" : "*\(intraID)*"], merge: true)
+        self.collection(collection).document(document).setData(["intraID" : "\(intraID)"], merge: true)
     }
     
     func addTodayToDates(collection: String, document: String) {

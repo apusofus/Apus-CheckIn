@@ -8,7 +8,7 @@
 import Foundation
 
 struct ProcessLocation {
-    private let availableDistance = 50.0
+    private let availableDistance = 501.0
     private let gaepoLatitude = 37.48815449911871
     private let gaepoLongitude = 127.06476621423361
     
