@@ -29,20 +29,19 @@ struct FrontView: View {
                     .font(.title2).fontWeight(.ultraLight)
                     .padding(.bottom, 30)
                     .multilineTextAlignment(.center)
-                
             }
             .navigationBarHidden(true)
-            .alert(isPresented: $uuidManager.isFirst,
-                   TextAlert(title: "Give me your IntraID",
-                             message: "",
-                             keyboardType: .alphabet) { result in
-                if let intraID = result {
-                    db.addIntraID(collection: "testCollection", document: uuidManager.UUID, intraID: intraID)
-                    uuidManager.isFirst = false
-                    uuidManager.renewIntraId(intraID: intraID)
-                }
-            })
         }
+        .alert(isPresented: $uuidManager.isFirst,
+               TextAlert(title: "Give me your IntraID",
+                         message: "",
+                         keyboardType: .alphabet) { result in
+            if let intraID = result {
+                db.addIntraID(collection: "testCollection", document: uuidManager.UUID, intraID: intraID)
+                uuidManager.isFirst = false
+                uuidManager.renewIntraId(intraID: intraID)
+            }
+        })
     }
 }
 
@@ -54,7 +53,7 @@ struct EntranceButton: View {
     var time: String = ""
     var body: some View {
         NavigationLink (
-            destination: CustomDatePicker(currentDate: $today),
+            destination: Home(),
             label: {
                 if isInLocation == true {
                     ZStack {
@@ -75,11 +74,11 @@ struct EntranceButton: View {
                    height: self.buttonHeight())
             .disabled(!isInLocation)
     }
-    
+
     private func buttonWidth() -> CGFloat {
         return (UIScreen.main.bounds.width - 5 * 12) / 1.2
     }
-    
+
     private func buttonHeight() -> CGFloat {
         return (UIScreen.main.bounds.width - 5 * 12) / 1.2
     }
