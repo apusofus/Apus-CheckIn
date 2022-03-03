@@ -14,22 +14,22 @@ import SwiftUI
 //  SwiftLint 써보기
 //  6줄 되면 화면 올라가는 거 - 5줄에도 빈 6줄 넣어도 된다. 원래도 6줄이도록.
 //  sat 파란색 ok
-struct MyModalView: View {
-    var value: Date
-    let formatter = DateFormatter()
-
-    static let dateformat: DateFormatter = {
-          let formatter = DateFormatter()
-           formatter.dateFormat = "YYYY년 M월 d일"
-           return formatter
-       }()
-
-    var body: some View {
-        VStack {
-            Text("오늘의 날짜입니다 : \(value, formatter: MyModalView.dateformat)")
-        }
-    }
-}
+//struct MyModalView: View {
+//    var value: Date
+//    let formatter = DateFormatter()
+//
+//    static let dateformat: DateFormatter = {
+//          let formatter = DateFormatter()
+//           formatter.dateFormat = "YYYY년 M월 d일"
+//           return formatter
+//       }()
+//
+//    var body: some View {
+//        VStack {
+//            Text("오늘의 날짜입니다 : \(value, formatter: MyModalView.dateformat)")
+//        }
+//    }
+//}
 
 struct CustomDatePicker: View {
     @Binding var currentDate: Date
@@ -120,7 +120,7 @@ struct CustomDatePicker: View {
             }
         }
         .sheet(item: $currentDateValue) { value in
-            MyModalView(value: value.date)
+            MyModalView(viewModel: MyModalViewModel())
         }
     }
 

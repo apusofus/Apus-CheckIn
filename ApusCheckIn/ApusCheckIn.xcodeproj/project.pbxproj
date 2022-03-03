@@ -10,7 +10,10 @@
 		8215A7D527D079EF00058278 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215A7D427D079EF00058278 /* DateValue.swift */; };
 		8215A7D827D07A2600058278 /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215A7D627D07A2600058278 /* CustomDatePicker.swift */; };
 		8215A7D927D07A2600058278 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215A7D727D07A2600058278 /* Home.swift */; };
-		8215A7DC27D07A3200058278 /* MyModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215A7DB27D07A3200058278 /* MyModalView.swift */; };
+		8215A7DE27D07FE200058278 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215A7DD27D07FE200058278 /* ContentView.swift */; };
+		8215A7E027D07FE700058278 /* MyModalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215A7DF27D07FE700058278 /* MyModalModel.swift */; };
+		8215A7E227D0800800058278 /* MyModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215A7E127D0800800058278 /* MyModalViewModel.swift */; };
+		8215A7E427D0800E00058278 /* MyModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215A7E327D0800E00058278 /* MyModalView.swift */; };
 		822C041527C746F900ADD3B6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822C041427C746F900ADD3B6 /* Extensions.swift */; };
 		822C041727C7472B00ADD3B6 /* InputPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822C041627C7472B00ADD3B6 /* InputPopUp.swift */; };
 		825879ED27BE12F6008912B2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825879EC27BE12F6008912B2 /* LocationManager.swift */; };
@@ -31,7 +34,10 @@
 		8215A7D427D079EF00058278 /* DateValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
 		8215A7D627D07A2600058278 /* CustomDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
 		8215A7D727D07A2600058278 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		8215A7DB27D07A3200058278 /* MyModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyModalView.swift; sourceTree = "<group>"; };
+		8215A7DD27D07FE200058278 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8215A7DF27D07FE700058278 /* MyModalModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyModalModel.swift; sourceTree = "<group>"; };
+		8215A7E127D0800800058278 /* MyModalViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyModalViewModel.swift; sourceTree = "<group>"; };
+		8215A7E327D0800E00058278 /* MyModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyModalView.swift; sourceTree = "<group>"; };
 		822C041427C746F900ADD3B6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		822C041627C7472B00ADD3B6 /* InputPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPopUp.swift; sourceTree = "<group>"; };
 		825879EC27BE12F6008912B2 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -61,19 +67,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8215A7DA27D07A3200058278 /* Modal */ = {
-			isa = PBXGroup;
-			children = (
-				8215A7DB27D07A3200058278 /* MyModalView.swift */,
-			);
-			path = Modal;
-			sourceTree = "<group>";
-		};
 		825879E927BE12D4008912B2 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				82DC444027BE0905007D8684 /* FrontView.swift */,
 				8215A7D627D07A2600058278 /* CustomDatePicker.swift */,
+				8215A7E327D0800E00058278 /* MyModalView.swift */,
+				8215A7DD27D07FE200058278 /* ContentView.swift */,
 				8215A7D727D07A2600058278 /* Home.swift */,
 			);
 			path = View;
@@ -83,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				822C041627C7472B00ADD3B6 /* InputPopUp.swift */,
+				8215A7E127D0800800058278 /* MyModalViewModel.swift */,
 				825879EC27BE12F6008912B2 /* LocationManager.swift */,
 				9BFA6F3C27C39DB100681570 /* UUIDManager.swift */,
 			);
@@ -92,6 +93,7 @@
 		825879EB27BE12EC008912B2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8215A7DF27D07FE700058278 /* MyModalModel.swift */,
 				8296B05727BE5DEF007CF4AC /* ProcessLocation.swift */,
 				8215A7D427D079EF00058278 /* DateValue.swift */,
 			);
@@ -119,7 +121,6 @@
 			children = (
 				825879F427BE2024008912B2 /* Info.plist */,
 				9B4F9E8D27C4C418002B7390 /* GoogleService-Info.plist */,
-				8215A7DA27D07A3200058278 /* Modal */,
 				825879EB27BE12EC008912B2 /* Model */,
 				825879E927BE12D4008912B2 /* View */,
 				825879EA27BE12DE008912B2 /* ViewModel */,
@@ -219,16 +220,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8215A7E027D07FE700058278 /* MyModalModel.swift in Sources */,
 				822C041527C746F900ADD3B6 /* Extensions.swift in Sources */,
 				9BFA6F3D27C39DB100681570 /* UUIDManager.swift in Sources */,
+				8215A7DE27D07FE200058278 /* ContentView.swift in Sources */,
+				8215A7E427D0800E00058278 /* MyModalView.swift in Sources */,
 				8215A7D927D07A2600058278 /* Home.swift in Sources */,
 				8296B05827BE5DEF007CF4AC /* ProcessLocation.swift in Sources */,
 				82DC443327BE0756007D8684 /* ApusCheckInApp.swift in Sources */,
 				822C041727C7472B00ADD3B6 /* InputPopUp.swift in Sources */,
 				8215A7D527D079EF00058278 /* DateValue.swift in Sources */,
-				8215A7DC27D07A3200058278 /* MyModalView.swift in Sources */,
 				825879ED27BE12F6008912B2 /* LocationManager.swift in Sources */,
 				82DC444127BE0905007D8684 /* FrontView.swift in Sources */,
+				8215A7E227D0800800058278 /* MyModalViewModel.swift in Sources */,
 				8215A7D827D07A2600058278 /* CustomDatePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
