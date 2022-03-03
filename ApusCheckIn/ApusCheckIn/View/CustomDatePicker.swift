@@ -120,7 +120,7 @@ struct CustomDatePicker: View {
             }
         }
         .sheet(item: $currentDateValue) { value in
-            MyModalView(viewModel: MyModalViewModel())
+            MyModalView(viewModel: MyModalViewModel(), date: value.date)
         }
     }
 

@@ -22,12 +22,13 @@
 		82DC443727BE0757007D8684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82DC443627BE0757007D8684 /* Assets.xcassets */; };
 		82DC443A27BE0757007D8684 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82DC443927BE0757007D8684 /* Preview Assets.xcassets */; };
 		82DC444127BE0905007D8684 /* FrontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DC444027BE0905007D8684 /* FrontView.swift */; };
-		9B4F9E8E27C4C418002B7390 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B4F9E8D27C4C418002B7390 /* GoogleService-Info.plist */; };
 		9BFA6F3D27C39DB100681570 /* UUIDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA6F3C27C39DB100681570 /* UUIDManager.swift */; };
 		CC1A8B5B27C4B4D90006EA0A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CC1A8B5A27C4B4D90006EA0A /* FirebaseAnalytics */; };
 		CC1A8B5D27C4B4D90006EA0A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CC1A8B5C27C4B4D90006EA0A /* FirebaseFirestore */; };
 		CC1A8B5F27C4B4D90006EA0A /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = CC1A8B5E27C4B4D90006EA0A /* FirebaseFirestoreCombine-Community */; };
 		CC1A8B6127C4B4D90006EA0A /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = CC1A8B6027C4B4D90006EA0A /* FirebaseFirestoreSwift-Beta */; };
+		CC93BA8327D08A3800487185 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC93BA8227D08A3800487185 /* GoogleService-Info.plist */; };
+		CC93BA8627D097CA00487185 /* CodableFirebase in Frameworks */ = {isa = PBXBuildFile; productRef = CC93BA8527D097CA00487185 /* CodableFirebase */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,8 +49,8 @@
 		82DC443627BE0757007D8684 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82DC443927BE0757007D8684 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		82DC444027BE0905007D8684 /* FrontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontView.swift; sourceTree = "<group>"; };
-		9B4F9E8D27C4C418002B7390 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9BFA6F3C27C39DB100681570 /* UUIDManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UUIDManager.swift; sourceTree = "<group>"; };
+		CC93BA8227D08A3800487185 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +61,7 @@
 				CC1A8B5F27C4B4D90006EA0A /* FirebaseFirestoreCombine-Community in Frameworks */,
 				CC1A8B6127C4B4D90006EA0A /* FirebaseFirestoreSwift-Beta in Frameworks */,
 				CC1A8B5B27C4B4D90006EA0A /* FirebaseAnalytics in Frameworks */,
+				CC93BA8627D097CA00487185 /* CodableFirebase in Frameworks */,
 				CC1A8B5D27C4B4D90006EA0A /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,7 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				825879F427BE2024008912B2 /* Info.plist */,
-				9B4F9E8D27C4C418002B7390 /* GoogleService-Info.plist */,
+				CC93BA8227D08A3800487185 /* GoogleService-Info.plist */,
 				825879EB27BE12EC008912B2 /* Model */,
 				825879E927BE12D4008912B2 /* View */,
 				825879EA27BE12DE008912B2 /* ViewModel */,
@@ -161,6 +163,7 @@
 				CC1A8B5C27C4B4D90006EA0A /* FirebaseFirestore */,
 				CC1A8B5E27C4B4D90006EA0A /* FirebaseFirestoreCombine-Community */,
 				CC1A8B6027C4B4D90006EA0A /* FirebaseFirestoreSwift-Beta */,
+				CC93BA8527D097CA00487185 /* CodableFirebase */,
 			);
 			productName = ApusCheckIn;
 			productReference = 82DC442F27BE0756007D8684 /* ApusCheckIn.app */;
@@ -192,6 +195,7 @@
 			mainGroup = 82DC442627BE0756007D8684;
 			packageReferences = (
 				CC1A8B5927C4B4D90006EA0A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				CC93BA8427D097C900487185 /* XCRemoteSwiftPackageReference "CodableFirebase" */,
 			);
 			productRefGroup = 82DC443027BE0756007D8684 /* Products */;
 			projectDirPath = "";
@@ -209,7 +213,7 @@
 			files = (
 				82DC443A27BE0757007D8684 /* Preview Assets.xcassets in Resources */,
 				82DC443727BE0757007D8684 /* Assets.xcassets in Resources */,
-				9B4F9E8E27C4C418002B7390 /* GoogleService-Info.plist in Resources */,
+				CC93BA8327D08A3800487185 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +458,14 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		CC93BA8427D097C900487185 /* XCRemoteSwiftPackageReference "CodableFirebase" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alickbass/CodableFirebase";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -476,6 +488,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CC1A8B5927C4B4D90006EA0A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseFirestoreSwift-Beta";
+		};
+		CC93BA8527D097CA00487185 /* CodableFirebase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC93BA8427D097C900487185 /* XCRemoteSwiftPackageReference "CodableFirebase" */;
+			productName = CodableFirebase;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
