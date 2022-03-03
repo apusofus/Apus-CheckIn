@@ -48,6 +48,21 @@ extension Firestore {
         let dateformatter = DateFormatter()
         dateformatter.dateFormat = "yyMMdd"
         let today = dateformatter.string(from: Date())
-        self.collection(collection).document(document).setData(["Dates": [today : Date()]], merge: true)
+        //self.collection(collection).document(document).setData(["Dates": [today : Date()]], merge: true)
+        self.collection("testCollection").document(document).getDocument { doc, error in
+            guard error == nil, let doc = doc, doc.exists
+            else { return }
+            let data = doc.data()
+            if let date = data?["Dates"] as? Dictionary<String, Timestamp> {
+                if date[today] != nil {
+                    return
+                } else {
+                    self.collection(collection).document(document).setData(["Dates": [today : Date()]], merge: true)
+                }
+                return
+            } else {
+                self.collection(collection).document(document).setData(["Dates": [today : Date()]], merge: true)
+            }
+        }
     }
 }
