@@ -34,7 +34,7 @@ import SwiftUI
 struct CustomDatePicker: View {
     @Binding var currentDate: Date
     @State var currentMonth: Int = 0
-    @State private var isMyModalViewPresented: Bool = false
+//    @State private var isMyModalViewPresented: Bool = true
 
     @State var currentDateValue: DateValue?
 
@@ -95,6 +95,8 @@ struct CustomDatePicker: View {
                 Spacer()
             }
             .padding()
+        }.onAppear {
+            self.currentDateValue = DateValue(day: 0, date: currentDate)
         }
     }
 
@@ -110,7 +112,7 @@ struct CustomDatePicker: View {
 
         Button {
             currentDateValue = value
-            self.isMyModalViewPresented.toggle()
+//            self.isMyModalViewPresented.toggle()
         } label: {
             if value.day != -1 {
                 Text("\(value.day)")
