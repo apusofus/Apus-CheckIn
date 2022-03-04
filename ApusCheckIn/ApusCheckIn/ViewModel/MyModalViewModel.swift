@@ -25,8 +25,8 @@ class MyModalViewModel: ObservableObject {
     func fetchData() {
         let docRef = db.collection("testCollection")
         docRef.getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("error: \(err)")
+            if err != nil {
+//                print("error: \(err)")
             } else {
                 guard let documents = querySnapshot?.documents else { return }
                 for doc in documents {
@@ -44,7 +44,7 @@ class MyModalViewModel: ObservableObject {
                     let member = Member(id: id, intraID: intraID, dates: dateArr)
                     self.members.append(member)
                 }
-                print(self.members)
+//                print(self.members)
             }
         }
     }

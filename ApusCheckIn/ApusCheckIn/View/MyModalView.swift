@@ -75,17 +75,24 @@ struct MyModalView: View {
         }
         
     }
-}
-
-extension MyModalView {
     func getCheckInTimeString(_ member: Member, _ checkedInDate: Date) -> String {
         if let date = member.getCheckedInDate(theDate: checkedInDate) {
             let checkedInTime = member.getCheckInTime(today: date)
             return checkedInTime
         }
         return "NONE"
-    }
+    } /* this function was originally placed in extension */
 }
+
+//extension MyModalView {
+//    func getCheckInTimeString(_ member: Member, _ checkedInDate: Date) -> String {
+//        if let date = member.getCheckedInDate(theDate: checkedInDate) {
+//            let checkedInTime = member.getCheckInTime(today: date)
+//            return checkedInTime
+//        }
+//        return "NONE"
+//    }
+//}
 
 
 

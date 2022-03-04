@@ -9,6 +9,22 @@ import Foundation
 import SwiftUI
 import Firebase
 
+extension Date {
+    func getAllDates() -> [Date] {
+        let calendar = Calendar.current
+        let startDate = calendar.date(from: Calendar.current.dateComponents([.year, .month], from: self))!
+        let range = calendar.range(of: .day, in: .month, for: self)!
+
+        return range.compactMap { day -> Date in
+            return calendar.date(byAdding: .day, value: day - 1, to: startDate)!
+        }
+    }
+}
+
+extension Color {
+    static let myColor = Color("Color")
+}
+
 extension UIAlertController {
   convenience init(alert: TextAlert) {
     self.init(title: alert.title, message: alert.message, preferredStyle: .alert)

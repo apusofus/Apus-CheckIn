@@ -16,7 +16,7 @@ class UUIDManager: ObservableObject {
     let db = Firestore.firestore()
     init(uuid: String) {
         self.UUID = uuid
-        print(uuid) // 추후 삭제할 것
+//        print(uuid) // 추후 삭제할 것
         self.intraID = "undefined"
         db.collection("testCollection").document(uuid).getDocument { document, error in
             guard error == nil, let document = document, document.exists, let intraID = document.get("intraID") as? String
@@ -25,7 +25,7 @@ class UUIDManager: ObservableObject {
                 return
             }
             self.intraID = intraID
-            print(self.intraID)
+//            print(self.intraID)
         }
     }
     

@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		8215A7D527D079EF00058278 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215A7D427D079EF00058278 /* DateValue.swift */; };
 		8215A7D827D07A2600058278 /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215A7D627D07A2600058278 /* CustomDatePicker.swift */; };
-		8215A7D927D07A2600058278 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215A7D727D07A2600058278 /* Home.swift */; };
-		8215A7DE27D07FE200058278 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215A7DD27D07FE200058278 /* ContentView.swift */; };
 		8215A7E027D07FE700058278 /* MyModalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215A7DF27D07FE700058278 /* MyModalModel.swift */; };
 		8215A7E227D0800800058278 /* MyModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215A7E127D0800800058278 /* MyModalViewModel.swift */; };
 		8215A7E427D0800E00058278 /* MyModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215A7E327D0800E00058278 /* MyModalView.swift */; };
@@ -34,8 +32,6 @@
 /* Begin PBXFileReference section */
 		8215A7D427D079EF00058278 /* DateValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
 		8215A7D627D07A2600058278 /* CustomDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
-		8215A7D727D07A2600058278 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		8215A7DD27D07FE200058278 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8215A7DF27D07FE700058278 /* MyModalModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyModalModel.swift; sourceTree = "<group>"; };
 		8215A7E127D0800800058278 /* MyModalViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyModalViewModel.swift; sourceTree = "<group>"; };
 		8215A7E327D0800E00058278 /* MyModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyModalView.swift; sourceTree = "<group>"; };
@@ -75,8 +71,6 @@
 				82DC444027BE0905007D8684 /* FrontView.swift */,
 				8215A7D627D07A2600058278 /* CustomDatePicker.swift */,
 				8215A7E327D0800E00058278 /* MyModalView.swift */,
-				8215A7DD27D07FE200058278 /* ContentView.swift */,
-				8215A7D727D07A2600058278 /* Home.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -227,9 +221,7 @@
 				8215A7E027D07FE700058278 /* MyModalModel.swift in Sources */,
 				822C041527C746F900ADD3B6 /* Extensions.swift in Sources */,
 				9BFA6F3D27C39DB100681570 /* UUIDManager.swift in Sources */,
-				8215A7DE27D07FE200058278 /* ContentView.swift in Sources */,
 				8215A7E427D0800E00058278 /* MyModalView.swift in Sources */,
-				8215A7D927D07A2600058278 /* Home.swift in Sources */,
 				8296B05827BE5DEF007CF4AC /* ProcessLocation.swift in Sources */,
 				82DC443327BE0756007D8684 /* ApusCheckInApp.swift in Sources */,
 				822C041727C7472B00ADD3B6 /* InputPopUp.swift in Sources */,
