@@ -53,7 +53,7 @@ struct EntranceButton: View {
     var time: String = ""
     var body: some View {
         NavigationLink (
-            destination: Home(),
+            destination: CustomDatePicker(currentDate: $today),
             label: {
                 if isInLocation == true {
                     ZStack {
