@@ -32,7 +32,7 @@ struct Member: Identifiable, Codable {
     }
     
     
-    func didMemberCheckInThur(theDate:Date) -> Bool {
+    func didMemberCheckInThur(theDate: Date) -> Bool {
         
                 
         //목요일값 == 5
@@ -41,6 +41,29 @@ struct Member: Identifiable, Codable {
             return true
         }
         return false
+    }
+    
+    func getCheckedInDate(theDate: Date) -> Date? {
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yy-MM-dd"
+        
+        for date in self.dates {
+            if formatter.string(from: date) == formatter.string(from: theDate) {
+                return date
+            }
+        }
+        return nil
+    }
+    
+    
+    func getCheckInTime(today: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        
+        let checkInTime = formatter.string(from: today)
+        
+        return checkInTime
     }
     
     

@@ -20,12 +20,14 @@ struct MyModalView: View {
                     Section {
                         //여기서 ForEach를 쓰려면 Model ->idenfiable
                         //VieMode -> private(set)으로 해야함
-                        ForEach(viewModel.members) { member in
+                        ForEach(viewModel.members.sorted(by: {
+                            return (getCheckInTimeString($0, self.date)).compare(getCheckInTimeString($1, self.date)) == .orderedAscending
+                        })) { member in
                             if member.didMemberCheckInOnTheDate(theDate: self.date) {
                                 HStack() {
                                     Text("\(member.intraID)")
                                     Spacer()
-                                    Text("in time")
+                                    Text(getCheckInTimeString(member, self.date))
                                         .font(.caption)
                                         .foregroundColor(Color.gray)
                                     //이미지를 뷰로 따로 빼기. 템플릿화
@@ -76,7 +78,13 @@ struct MyModalView: View {
 }
 
 extension MyModalView {
-    
+    func getCheckInTimeString(_ member: Member, _ checkedInDate: Date) -> String {
+        if let date = member.getCheckedInDate(theDate: checkedInDate) {
+            let checkedInTime = member.getCheckInTime(today: date)
+            return checkedInTime
+        }
+        return "NONE"
+    }
 }
 
 
