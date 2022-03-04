@@ -25,11 +25,11 @@ struct MyModalView: View {
                                 HStack() {
                                     Text("\(member.intraID)")
                                     Spacer()
-                                    Text("time")
+                                    Text("in time")
                                         .font(.caption)
                                         .foregroundColor(Color.gray)
                                     //이미지를 뷰로 따로 빼기. 템플릿화
-                                    if member.didMemberCheckInThur() {
+                                    if member.didMemberCheckInThur(theDate: self.date) {
                                         Image(systemName: "swift")
                                             .foregroundColor(.blue)
                                     } else {

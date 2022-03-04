@@ -68,11 +68,14 @@ struct EntranceButton: View {
                 }
             })
             .simultaneousGesture(TapGesture().onEnded{
-                db.addTodayToDates(collection: "testCollection", document: uuidManager.UUID)
+                if isInLocation == true {
+                    db.addTodayToDates(collection: "testCollection", document: uuidManager.UUID)
+                }
+                
             })
             .frame(width: self.buttonWidth(),
                    height: self.buttonHeight())
-            .disabled(!isInLocation)
+//            .disabled(!isInLocation)
     }
 
     private func buttonWidth() -> CGFloat {

@@ -32,12 +32,11 @@ struct Member: Identifiable, Codable {
     }
     
     
-    func didMemberCheckInThur() -> Bool {
+    func didMemberCheckInThur(theDate:Date) -> Bool {
         
-        let today = Date()
                 
         //목요일값 == 5
-        let weekdayOfToday = Calendar.current.component(.weekday, from: today)
+        let weekdayOfToday = Calendar.current.component(.weekday, from: theDate)
         if weekdayOfToday == 5 {
             return true
         }
